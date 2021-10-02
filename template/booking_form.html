@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block title %}Form{% endblock title %}
+
+{% block body %}
+<h1 class="text-center my-4">Fill the Form for Booking</h1>
+<form method="post" action "/form">
+{% csrf_token %}
+
+<div class="container">
+<div class="row">
+  <div class="col">
+  <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" class="form-control" id="name" name="name" placeholder="Please Enter Your Name">
+  </div>
+
+  <div class="form-group">
+      <label for="name">Mobile</label>
+      <input type="text" class="form-control" id="mobile" name="mobile" placeholder="Please Enter Your Mobile Number">
+  </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+
+  <div class="form-group">
+      <label for="name">Email</label>
+      <input type="text" class="form-control" id="email" name="email" placeholder="Please Enter Your Email">
+  </div>
+
+  <div class="form-group">
+      <label for="name">City</label>
+      <input type="text" class="form-control" id="city" name="city" placeholder="Please Enter Your City Name">
+  </div>
+</div>
+<div class="container">
+    <div class="col-auto my-4">
+      <label for="inputselect" class="form-label">Please Chose A Plan</label>
+      <label class="visually-hidden" for="autoSizingSelect">Preference</label>
+      <select class="form-select" id="autoSizingSelect">
+        <option selected>Choose...</option>
+        <option value="1">3 Days Plan</option>
+        <option value="2">5 Days Plan</option>
+        <option value="3">7 Days Plan</option>
+      </select>
+    </div>
+    <label for="inputselect" class="form-label">Selecte Tour Location</label>
+    <label class="visually-hidden" for="autoSizingSelect">Preference</label>
+    <select class="form-select" id="autoSizingSelect">
+      <option selected>Choose...</option>
+      <option value="1">Gilgit,Huza</option>
+      <option value="2">Naran,Nagaparbat</option>
+      <option value="3">Azad Jambo Kashmir</option>
+    </select>
+    <div class="col-12 my-4">
+      <button type="submit" class="btn btn-primary">Book Now</button>
+    </div>
+  </form>
+</div>
+{% endblock body %}
